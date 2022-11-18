@@ -48,6 +48,10 @@ header{
     box-shadow: 0 0 100px 400px hsla(233, 8%, 62%, 0.486);
 }
 
+.icon{
+    padding-top: 10px;
+}
+
 .nav-bar{
     position: absolute;
     top: 100%;
@@ -114,6 +118,14 @@ header{
     font-weight: 700;
 }
 
+.btn-request-invite:hover{
+    opacity: .7;
+}
+
+.btn-request-invite:active{
+    opacity: .5;
+}
+
 @media screen and (min-width: 650px) {
 
     header{
@@ -137,6 +149,30 @@ header{
     .nav-bar a{
         font-size: 13px;
         color: var(--grayish-blue);
+        position: relative;
+    }
+
+    .nav-bar a:hover{
+        color: black;
+    }
+
+    .nav-bar a::before{
+        content: '';
+        display: block;
+        height: 3px;
+        /*width: 100%;*/
+        background: var(--lime-green);
+        position: absolute;
+        bottom: -23px;
+        left: -5px;
+        right: -5px;
+        transform: scale(0,1);
+        transform-origin: left;
+        transition: transform ease-in-out 250ms;
+    }
+
+    .nav-bar a:hover::before{
+        transform: scale(1,1);
     }
 }
 
@@ -144,6 +180,10 @@ header{
 
     header{
         justify-content: space-around;
+    }
+
+    .icon{
+        margin-right: 3rem;
     }
     
     .btn-request-invite{
