@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --dark-blue: hsl(233, 26%, 24%);
+    --lime-green: hsl(136, 65%, 51%);
+    --bright-cyan: hsl(192, 70%, 51%);
+    --grayish-blue: hsl(233, 8%, 62%);
+    --light-grayish-blue: hsl(220, 16%, 96%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
+}
+
+
+
+
+body{
+    background-color: var(--white);
+    min-width: 350px;
+    font-family: 'Public Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/*This is a mobile first design. 
+In the header, only the logo and the burger icon are displayed*/
+
+header{
+    background-color: var(--white);
+    width: 100%;
+    height: 65px;
+    border-bottom: 1px solid var(--light-grayish-blue);
+    padding: 1.3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+}
+
+/*This shadow only appears when the navbar is shown on mobile screen.*/
+.header-shadow{
+    box-shadow: 0 0 100px 400px hsla(233, 8%, 62%, 0.486);
+}
+
+.nav-bar{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 1.5rem;
+    margin-inline: auto;
+    width: min(calc(100% - 3rem), 350px);
+    padding: 1.5rem;
+    background-color: var(--white);
+    border: 1px solid var(--light-grayish-blue);
+    border-radius: 5px;
+    box-shadow: 0 0 10px 5px hsla(233, 8%, 62%, 0.486);
+    transform: translateX(150%); /*hides the navbar from the screen*/
+    transition: transform 0.3s ease;
+}
+
+.nav-active{
+    transition: transform 0.3s ease;
+    transform: translateX(0%); /*moves the navbar to the screen*/
+}
+
+.nav-bar ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-bar a{
+    text-decoration: none;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 18px;
+    color: black;
+}
+
+.nav-bar li{
+    list-style: none;
+}
+
+.burger-icon{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.burger-icon img{
+    grid-column: 1 / 2;
+}
+
+.burger-hide{
+    display: none;
+}
+
+.btn-request-invite{
+    display: none;
+    border: none;
+    border-radius: 1.5rem;
+    padding: .8rem 2rem;
+    background: linear-gradient(120deg, var(--lime-green) 20%, var(--bright-cyan) 90%);;
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 650px) {
+
+    header{
+        padding: 1.3rem 2.5rem;
+    }
+
+    .burger-icon{
+        display: none;
+    }
+
+    .nav-bar, .nav-bar ul{
+        all: unset;
+    }
+
+    .nav-bar ul{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .nav-bar a{
+        font-size: 13px;
+        color: var(--grayish-blue);
+    }
+}
+
+@media  screen and (min-width: 880px) {
+
+    header{
+        justify-content: space-around;
+    }
+    
+    .btn-request-invite{
+        display: block;
+    }
+
+    .nav-bar ul{
+        gap: 2rem;
+    }
+
+}
+
+
+
+.sub-div{
+    width: 100%;
+    height: 1000px;
+}
