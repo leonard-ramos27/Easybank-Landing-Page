@@ -155,7 +155,8 @@ header{
 }
 
 .hero-text h1, .hero-text p,
-.features-section h2, .features-section p{
+.features-section h2, .features-section p,
+.latest-articles-section h2{
     text-align: center;
 }
 
@@ -183,19 +184,25 @@ header{
 
 .features-section{
     width: 100%;
-    padding: 3rem 10% 1rem;
+    padding: 4rem 10% 1rem;
+}
+
+.features-section{
     background-color: var(--light-grayish-blue);
 }
 
 .features-section-main-text{
     margin-bottom: 3rem;
-    /*padding: .8rem;*/
 }
 
-.features-section-main-text h2{
+.features-section-main-text h2,
+.latest-articles-section h2{
     font-size: 1.7rem;
     font-weight: 300;
     color: black;
+}
+
+.features-section-main-text h2{
     line-height: 2rem;
     margin-bottom: 1rem;
 }
@@ -214,6 +221,62 @@ header{
     font-weight: 300;
     color: black;
 }
+
+.latest-articles-section{
+    background-color: var(--very-light-gray);
+    width: 100%;
+    padding: 4rem 10% 3rem;
+}
+
+.latest-articles-section h2{
+    margin-bottom: 2rem;
+}
+
+.latest-articles-flex-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.article-container{
+    width: min(100%, 400px);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-inline: auto;
+}
+
+.article-container img{
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.article-details{
+    background-color: var(--white);
+    padding: 1.5rem 10%;
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
+
+.article-details h5{
+    font-size: .6rem;
+    color: var(--grayish-blue);
+    font-weight: 300;
+}
+
+.article-details h3{
+    font-size: 1rem;
+    color: black;
+    font-weight: 300;
+}
+
+.article-details p{
+    font-size: .7rem;
+    font-weight: 300;
+    line-height: 1rem;
+    color: var(--grayish-blue);
+}
+
 
 @media screen and (min-width: 650px) {
 
@@ -298,7 +361,8 @@ header{
 
     .hero-text h1, .hero-text p,
     .features-section-main-text h2, .features-section-main-text p,
-    .feature-container h3, .feature-container p{
+    .feature-container h3, .feature-container p,
+    .latest-articles-section h2{
         text-align: left;
     }
 
@@ -314,22 +378,37 @@ header{
         padding: 3rem 4rem 2rem;
     }
 
+    .latest-articles-section{
+        padding: 3rem 4rem 3rem;
+    }
+
+
     .features-section-main-text p{
         max-width: 450px;
     }
 
-    .feature-flex-container{
+    .feature-flex-container,
+    .latest-articles-flex-container{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 1rem;
-        justify-content: space-between;
-        max-width: 88%;
+        justify-content: space-around;
+        /*max-width: 88%;*/
     }
 
-    .feature-container{
+    .feature-container,
+    .article-container{
         width: 200px;
         align-items: flex-start;
+    }
+
+    .article-container{
+        margin-inline: unset;
+    }
+
+    .article-details{
+        height: 100%;
     }
 
 }
@@ -382,12 +461,18 @@ header{
         padding: 3rem 8% 1rem 12%;
     }
 
+    .latest-articles-section{
+        padding: 3rem 8% 3rem 12%;
+    }
+
     .features-section-main-text p{
         max-width: 480px;
     }
 
-    .feature-flex-container{
+    .feature-flex-container,
+    .latest-articles-flex-container{
         max-width: 1000px;
+        justify-content: space-between;
     }
 
 }
