@@ -154,7 +154,8 @@ header{
     gap: 1.5rem;
 }
 
-.hero-text h1, .hero-text p{
+.hero-text h1, .hero-text p,
+.features-section h2, .features-section p{
     text-align: center;
 }
 
@@ -165,7 +166,9 @@ header{
     color: black;
 }
 
-.hero-text p{
+.hero-text p,
+.features-section p,
+.features-section-main-text p{
     font-size: .8rem;
     font-weight: 300;
     line-height: 1.3rem;
@@ -178,7 +181,39 @@ header{
     align-self: center;
 }
 
+.features-section{
+    width: 100%;
+    padding: 3rem 10% 1rem;
+    background-color: var(--light-grayish-blue);
+}
 
+.features-section-main-text{
+    margin-bottom: 3rem;
+    /*padding: .8rem;*/
+}
+
+.features-section-main-text h2{
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: black;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+}
+
+.feature-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.feature-container h3{
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: black;
+}
 
 @media screen and (min-width: 650px) {
 
@@ -261,7 +296,9 @@ header{
         padding-top: 3rem;
     }
 
-    .hero-text h1, .hero-text p{
+    .hero-text h1, .hero-text p,
+    .features-section-main-text h2, .features-section-main-text p,
+    .feature-container h3, .feature-container p{
         text-align: left;
     }
 
@@ -271,6 +308,28 @@ header{
 
     .hero-text button{
         align-self: flex-start;
+    }
+
+    .features-section{
+        padding: 3rem 4rem 2rem;
+    }
+
+    .features-section-main-text p{
+        max-width: 450px;
+    }
+
+    .feature-flex-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: space-between;
+        max-width: 88%;
+    }
+
+    .feature-container{
+        width: 200px;
+        align-items: flex-start;
     }
 
 }
@@ -317,6 +376,18 @@ header{
     .hero-phone-img{
         width: min(110%, 700px);
         height: 140%;
+    }
+
+    .features-section{
+        padding: 3rem 8% 1rem 12%;
+    }
+
+    .features-section-main-text p{
+        max-width: 480px;
+    }
+
+    .feature-flex-container{
+        max-width: 1000px;
     }
 
 }
