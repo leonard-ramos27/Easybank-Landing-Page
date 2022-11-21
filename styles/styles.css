@@ -16,9 +16,6 @@
     --white: hsl(0, 0%, 100%);
 }
 
-
-
-
 body{
     background-color: var(--white);
     min-width: 350px;
@@ -28,7 +25,6 @@ body{
 
 /*This is a mobile first design. 
 In the header, only the logo and the burger icon are displayed*/
-
 header{
     background-color: var(--white);
     width: 100%;
@@ -45,7 +41,7 @@ header{
 
 /*This shadow only appears when the navbar is shown on mobile screen.*/
 .header-shadow{
-    box-shadow: 0 0 100px 400px hsla(233, 8%, 62%, 0.486);
+    box-shadow: 0 0 100px 400px hsla(233, 5%, 34%, 0.781);
 }
 
 .icon{
@@ -64,7 +60,7 @@ header{
     background-color: var(--white);
     border: 1px solid var(--light-grayish-blue);
     border-radius: 5px;
-    box-shadow: 0 0 10px 5px hsla(233, 8%, 62%, 0.486);
+    box-shadow: 0 0 10px 5px hsla(233, 5%, 34%, 0.781);
     transform: translateX(150%); /*hides the navbar from the screen*/
     transition: transform 0.3s ease;
 }
@@ -99,10 +95,6 @@ header{
     align-items: center;
 }
 
-.burger-icon img{
-    grid-column: 1 / 2;
-}
-
 .burger-hide{
     display: none;
 }
@@ -126,6 +118,68 @@ header{
     opacity: .5;
 }
 
+.hero-section{
+    width: 100%;
+    min-height: max(500px, 100vh);;
+    padding-top: 65px;
+    display: grid;
+    grid-auto-flow: row;
+    background-color: var(--very-light-gray);
+}
+
+.hero-img{
+    width: 100%;
+    min-height: 50vh;
+    position: relative;
+    background-image: url(./images/bg-intro-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 150%;
+    background-position: 11% 60%;
+}
+
+.hero-phone-img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 90%;
+    aspect-ratio: .8 / 1;
+    margin-inline: auto;
+}
+
+.hero-text{
+    padding: 0 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero-text h1, .hero-text p{
+    text-align: center;
+}
+
+.hero-text h1{
+    font-size: 2.3rem;
+    font-weight: 300;
+    letter-spacing: .7px;
+    color: black;
+}
+
+.hero-text p{
+    font-size: .8rem;
+    font-weight: 300;
+    line-height: 1.3rem;
+    color: var(--grayish-blue);
+}
+
+.hero-text button{
+    display: block;
+    width: max-content;
+    align-self: center;
+}
+
+
+
 @media screen and (min-width: 650px) {
 
     header{
@@ -143,7 +197,7 @@ header{
     .nav-bar ul{
         display: flex;
         flex-direction: row;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
     .nav-bar a{
@@ -160,7 +214,6 @@ header{
         content: '';
         display: block;
         height: 3px;
-        /*width: 100%;*/
         background: var(--lime-green);
         position: absolute;
         bottom: -23px;
@@ -174,6 +227,52 @@ header{
     .nav-bar a:hover::before{
         transform: scale(1,1);
     }
+
+    .hero-section{
+        width: 100%;
+        min-height: max(500px, 60vh);
+        padding: 65px 0 0 2rem;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 1fr minmax(400px, 1fr);
+    }
+
+    .hero-img{
+        grid-column: 2 / 3;
+        background-image: url(./images/bg-intro-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: 200% 180%;
+        background-position: 11% 60%;
+    }
+
+    .hero-phone-img{
+        all: unset;
+        position: absolute;
+        top: -20%;
+        left: 15%;
+        width: 450px;
+        aspect-ratio: 3/4;
+    }
+
+    .hero-text{
+        grid-column: 1 / 2;
+        gap: .8rem;
+        justify-content: center;
+        padding-top: 3rem;
+    }
+
+    .hero-text h1, .hero-text p{
+        text-align: left;
+    }
+
+    .hero-text h1{
+        font-size: 2rem;
+    }
+
+    .hero-text button{
+        align-self: flex-start;
+    }
+
 }
 
 @media  screen and (min-width: 880px) {
@@ -192,6 +291,32 @@ header{
 
     .nav-bar ul{
         gap: 2rem;
+    }
+
+    .hero-section{
+        min-height: max(90vh, 600px);
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-text{
+        padding-left: 20%;
+        gap: 1.2rem;
+    }
+
+    .hero-text h1{
+        max-width: 500px;
+        font-size: 3rem;
+    }
+
+    .hero-text p{
+        max-width: 400px;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .hero-phone-img{
+        width: min(110%, 700px);
+        height: 140%;
     }
 
 }
