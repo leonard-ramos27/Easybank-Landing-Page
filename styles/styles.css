@@ -16,6 +16,9 @@
     --white: hsl(0, 0%, 100%);
 }
 
+/*#2D314D*/
+
+
 body{
     background-color: var(--white);
     min-width: 350px;
@@ -85,7 +88,7 @@ header{
     color: black;
 }
 
-.nav-bar li{
+.nav-bar li, .footer-nav li{
     list-style: none;
 }
 
@@ -120,7 +123,7 @@ header{
 
 .hero-section{
     width: 100%;
-    min-height: max(500px, 100vh);;
+    min-height: max(600px, 100vh);;
     padding-top: 65px;
     display: grid;
     grid-auto-flow: row;
@@ -142,7 +145,8 @@ header{
     bottom: 0;
     right: 0;
     left: 0;
-    width: 90%;
+    /*width: 90%;*/
+    width: min(90%, 425px);
     aspect-ratio: .8 / 1;
     margin-inline: auto;
 }
@@ -176,7 +180,7 @@ header{
     color: var(--grayish-blue);
 }
 
-.hero-text button{
+.hero-text button, .footer-btn{
     display: block;
     width: max-content;
     align-self: center;
@@ -270,10 +274,53 @@ header{
     font-weight: 300;
 }
 
+.article-details h3:hover,
+.footer-nav a:hover{
+    color: var(--lime-green);
+}
+
 .article-details p{
     font-size: .7rem;
     font-weight: 300;
     line-height: 1rem;
+    color: var(--grayish-blue);
+}
+
+footer{
+    background-color: var(--dark-blue);
+    padding: 2rem;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: row;
+    justify-items: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.socials-icon{
+    display: flex;
+    flex-direction: row;
+    gap: .8rem;
+}
+
+.footer-nav a{
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: 300;
+    color: var(--white);
+}
+
+.footer-nav ul{
+    display: grid;
+    grid-auto-flow: row;
+    justify-items: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+footer p{
+    font-size: .8rem;
+    font-weight: 300;
     color: var(--grayish-blue);
 }
 
@@ -411,6 +458,52 @@ header{
         height: 100%;
     }
 
+    footer{
+        padding: 5%;
+        display: grid;
+        grid-auto-flow: unset;
+        grid-template-areas: 
+        'logo nav button'
+        'socials nav copyright';
+        gap: 1rem;
+    }
+    
+    footer img{
+        grid-area: logo;
+        align-self: start;
+        justify-self: start;
+    }
+
+    .socials-icon{
+        grid-area: socials;
+        justify-self: start;
+    }
+
+    .footer-nav{
+        grid-area: nav;
+        width: 100%;
+    }
+
+    .footer-nav ul{
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-rows: repeat(3, 1fr);
+        justify-items: left;
+        row-gap: .3rem;
+        column-gap: 1rem;
+    }
+
+    .footer-btn{
+        grid-area: button;
+        align-self: end;
+        justify-self: end;
+    }
+
+    footer p{
+        grid-area: copyright;
+        justify-self: end;
+    }
+
 }
 
 @media  screen and (min-width: 880px) {
@@ -453,6 +546,8 @@ header{
     }
 
     .hero-phone-img{
+        /*width: min(110%, 700px);*/
+        min-width: 580px;
         width: min(110%, 700px);
         height: 140%;
     }
@@ -473,6 +568,10 @@ header{
     .latest-articles-flex-container{
         max-width: 1000px;
         justify-content: space-between;
+    }
+
+    footer{
+        padding: 3rem 10% 3rem 12%;
     }
 
 }
