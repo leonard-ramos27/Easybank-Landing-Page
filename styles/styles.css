@@ -16,8 +16,6 @@
     --white: hsl(0, 0%, 100%);
 }
 
-/*#2D314D*/
-
 
 body{
     background-color: var(--white);
@@ -44,7 +42,7 @@ header{
 
 /*This shadow only appears when the navbar is shown on mobile screen.*/
 .header-shadow{
-    box-shadow: 0 0 100px 400px hsla(233, 5%, 34%, 0.781);
+    box-shadow: 0 0 400px 400px hsla(233, 5%, 34%, 0.781);
 }
 
 .icon{
@@ -123,7 +121,6 @@ header{
 
 .hero-section{
     width: 100%;
-    /*min-height: max(600px, 100vh);*/
     padding-top: 65px;
     display: grid;
     grid-auto-flow: row;
@@ -132,9 +129,7 @@ header{
 
 .hero-img{
     width: 100%;
-    /*min-height: 50vh;*/
     height: 350px;
-    /*position: relative;*/
     background-image: url(./images/bg-intro-mobile.svg);
     background-repeat: no-repeat;
     background-size: 100% 150%;
@@ -143,14 +138,9 @@ header{
 
 .hero-phone-img{
     position: absolute;
-    /*bottom: 0;*/
-    /*bottom: 5px;*/
     top: 0;
     right: 0;
     left: 0;
-    /*width: 90%;*/
-    /*width: min(90%, 425px);
-    aspect-ratio: .8 / 1;*/
     width: min(90%, 400px);
     height: 410px;
     margin-inline: auto;
@@ -381,22 +371,17 @@ footer p{
 
     .hero-section{
         width: 100%;
-        /*min-height: max(500px, 60vh);*/
-        /*padding: 65px 0 0 2rem;*/
         display: grid;
         grid-auto-flow: column;
         grid-template-areas: 'text image';
-        /*grid-template-columns: 1fr minmax(400px, 1fr);*/
         grid-template-columns: 1fr 1fr;
         position: relative;
     }
 
     .hero-img{
-        /*grid-column: 2 / 3;*/
         grid-area: image;
         background-image: url(./images/bg-intro-desktop.svg);
         background-repeat: no-repeat;
-        /*background-size: 200% 180%;*/
         background-size: 150% 180%;
         background-position: 11% 60%;
         height: unset;
@@ -407,22 +392,15 @@ footer p{
         position: absolute;
         bottom: -70px;
         right: -80px;
-        /*left: 15%;
-        top: 0;
-        right: 0;
-        width: 450px;
-        aspect-ratio: 3/4;*/
         width: 45%;
         height: 120%;
     }
 
     .hero-text{
-        /*grid-column: 1 / 2;*/
         grid-area: text;
         gap: .8rem;
         justify-content: center;
         padding: 5rem;
-        /*padding-top: 3rem;*/
 
     }
 
@@ -443,7 +421,6 @@ footer p{
 
     .features-section,
     .latest-articles-section{
-        /*padding: 3rem 4rem 2rem;*/
         padding: 3rem 5rem;
     }
 
@@ -453,23 +430,9 @@ footer p{
         margin-inline: auto;
     }
 
-    .latest-articles-section{
-        /*padding: 3rem 4rem 3rem;*/
-    }
-
     .features-section-main-text p{
         max-width: 450px;
     }
-
-    /*.feature-flex-container,
-    .latest-articles-flex-container{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: space-around;
-        /*max-width: 88%;
-    }*/
 
     .feature-flex-container,
     .latest-articles-flex-container{
@@ -478,15 +441,12 @@ footer p{
         gap: 1rem;
     }
 
-    .feature-container
-    /*.article-container*/{
+    .feature-container{
         width: 210px;
-        /*align-items: flex-start;*/
     }
 
     .feature-container,
     .article-container{
-        /*width: 230px;*/
         align-items: flex-start;
     }
 
@@ -546,7 +506,7 @@ footer p{
 
 }
 
-@media  screen and (min-width: 1100px) { /*min-width: 880px*/
+@media  screen and (min-width: 1100px) { 
 
     header{
         justify-content: space-around;
@@ -564,13 +524,7 @@ footer p{
         gap: 2rem;
     }
 
-    .hero-section{
-        /*min-height: max(90vh, 600px);
-        grid-template-columns: 1fr 1fr;*/
-    }
-
     .hero-text{
-        /*padding-left: 20%;*/
         padding: 20%;
         gap: 1.2rem;
     }
@@ -587,31 +541,18 @@ footer p{
     }
 
     .hero-phone-img{
-        /*width: min(110%, 700px);*/
-        /*min-width: 580px;
-        width: min(110%, 700px);*/
         height: 130%;
         bottom: -130px;
     }
 
-    .features-section{
-        /*padding: 3rem 8% 1rem 12%;*/
-        /*padding: 3rem 7rem;*/
-    }
-
+    .features-section,
     .latest-articles-section{
-        /*padding: 3rem 8% 3rem 12%;*/
+        padding: 5rem;
     }
 
     .features-section-main-text p{
         max-width: 480px;
     }
-
-    /*.feature-flex-container,
-    .latest-articles-flex-container{
-        max-width: 1000px;
-        justify-content: space-between;
-    }*/
 
     footer{
         padding: 3rem 10% 3rem 12%;
@@ -619,9 +560,3 @@ footer p{
 
 }
 
-
-
-.sub-div{
-    width: 100%;
-    height: 1000px;
-}
